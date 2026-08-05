@@ -5,46 +5,58 @@ import { Building2, Calendar, MapPin } from "lucide-react";
 export const Experience = () => {
   const experiences = [
     {
-      title: "AI Engineer & Research Assistant",
-      company: "National University of Sciences & Technology (NUST)",
+      title: "AI/ML Engineer",
+      company: "Quanticept AI",
       location: "Islamabad, Pakistan",
-      period: "May 2025 - Present",
+      period: "Nov 2025 – June 2026",
       type: "Full-time",
       description: [
-        "Leading AI research initiatives in Natural Language Processing and Large Language Models",
-        "Developing multilingual AI systems and intelligent automation solutions",
-        "Collaborating on cutting-edge research projects with international impact",
-        "Publishing research findings in peer-reviewed journals and conferences"
+        "Building production LLM-based applications using LangChain, LangGraph, xAI, and FastAPI",
+        "Fine-tuning LLMs using Unsloth and Axolotl frameworks for domain-specific performance",
+        "Architecting and deploying RAG solutions on AWS SageMaker, Bedrock, and ECS/EC2 with Docker and CI/CD pipelines",
+        "Implementing OpenAI guardrails and moderation layers to ensure AI application safety and reliability"
       ],
-      skills: ["LLMs", "NLP", "Research", "Python", "LangChain", "AI Agents"]
+      skills: ["LLMs", "LangGraph", "Unsloth", "Axolotl", "AWS Bedrock", "SageMaker", "Docker", "CI/CD", "FastAPI", "Guardrails"]
     },
     {
-      title: "AI Engineer",
-      company: "ITsolera Pvt Ltd",
+      title: "AI Research Assistant",
+      company: "National University of Sciences and Technology (NUST)",
+      location: "Islamabad, Pakistan",
+      period: "May 2025 – Feb 2026",
+      type: "Research",
+      description: [
+        "Worked on Nadra and Jazz datasets, designing custom data processing and analysis algorithms",
+        "Fine-tuned LLMs using PEFT, LoRA, and QLoRA for multilingual task-specific use cases (Urdu/Arabic transliteration)",
+        "Developed multi-agent systems using LangGraph and Model Context Protocol (MCP), optimizing LLM inference and deployment",
+        "Created custom embedding models and evaluation pipelines tailored for low-resource languages (Urdu, Punjabi)"
+      ],
+      skills: ["PEFT / LoRA / QLoRA", "Multilingual LLMs", "MCP", "LangGraph", "Embedding Models", "Python"]
+    },
+    {
+      title: "AI/ML Intern",
+      company: "ITSOLERA Pvt Ltd",
       location: "Islamabad, Pakistan", 
-      period: "Jun 2024 - Sep 2024",
+      period: "Jun 2024 – Sept 2024",
       type: "Internship",
       description: [
-        "Designed and implemented AI-powered business solutions for enterprise clients",
-        "Built end-to-end machine learning pipelines and intelligent automation systems",
-        "Led cross-functional teams in delivering complex AI projects on time and within budget",
-        "Mentored junior developers and established AI development best practices"
+        "Built RAG-based systems using LangChain for education, healthcare, and customer support applications",
+        "Gained hands-on experience in prompt engineering and cloud model hosting via AWS Bedrock and SageMaker",
+        "Engineered context-aware question answering pipelines enabling accurate document retrieval"
       ],
-      skills: ["Machine Learning", "Python", "React Native", "APIs", "Project Management"]
+      skills: ["RAG Systems", "LangChain", "AWS Bedrock", "SageMaker", "Prompt Engineering", "Python"]
     },
     {
-      title: "Mobile Application Developer",
+      title: "Mobile App Developer",
       company: "Big Data Business Intelligence Pvt Ltd (UK)",
       location: "London, UK",
-      period: "Feb 2023 - May 2023", 
+      period: "Feb 2023 – May 2023", 
       type: "Internship",
       description: [
-        "Developed cross-platform mobile applications using React Native for diverse domains including ecommerce, business management, and record-keeping",
-        "Built robust backends in JavaScript and Node.js, integrating databases such as SQLite, Firebase, and MongoDB.",
-        "Delivered responsive, highperformance apps with seamless frontend-backend integration and optimized user experience across Android and iOS platforms.",
-        "Optimized database performance and established data governance frameworks"
+        "Developed cross-platform mobile applications using React Native for e-commerce, business management, and record-keeping",
+        "Built robust backends in JavaScript and Node.js, integrating SQLite, Firebase, and MongoDB databases",
+        "Delivered responsive, high-performance apps with seamless frontend-backend integration across Android and iOS"
       ],
-      skills: ["React Native", "Node js", "SQLite", "Mongodb", "API Development & Integration"]
+      skills: ["React Native", "Node.js", "SQLite", "Firebase", "MongoDB", "JavaScript"]
     }
   ];
 

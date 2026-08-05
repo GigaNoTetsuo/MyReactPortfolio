@@ -11,9 +11,19 @@ export const Publications = () => {
       year: "2025",
       type: "Research Paper",
       description: "Proposed an Agentic AI-based framework for chatbot testing, where AI agents simulate diverse user interactions to evaluate accuracy, coherence, and hallucination. The approach enables scalable, automated, and reliable assessment of chatbot performance.",
-      tags: ["NLP", "Agentic AI", "AI Behaviour"],
+      tags: ["NLP", "Agentic AI", "AI Behaviour", "QA Testing"],
       status: "Published",
-      url:"https://www.researchgate.net/publication/395490918_Testing_Chatbot_Systems_using_Agentic_AI_Approach"
+      url: "https://www.researchgate.net/publication/395490918_Testing_Chatbot_Systems_using_Agentic_AI_Approach"
+    },
+    {
+      title: "Securing the source: Blocking Knowledge-Base injection attacks on RAG",
+      journal: "IEEE (Submitted)",
+      year: "2025",
+      type: "Research Paper",
+      description: "Investigated vulnerability vectors in Retrieval-Augmented Generation (RAG) pipelines and proposed defense mechanisms to block indirect prompt injections and untrusted knowledge-base manipulation attacks.",
+      tags: ["RAG Security", "LLM Guardrails", "Prompt Injection", "Cybersecurity"],
+      status: "Submitted",
+      url: null
     },
     {
       title: "Do LLMs really learn from our queries?",
@@ -23,7 +33,7 @@ export const Publications = () => {
       description: "Explored whether Large Language Models truly learn from user queries, clarifying the difference between short-term context adaptation and long-term parameter updates. The article highlights common misconceptions about LLM learning and memory.",
       tags: ["AI Chatbots", "LLMs", "Learning"],
       status: "Published",
-      url:"https://medium.com/@hilmand.atk/do-chatbots-really-learn-from-your-queries-in-real-time-5e5ef83614fc"
+      url: "https://medium.com/@hilmand.atk/do-chatbots-really-learn-from-your-queries-in-real-time-5e5ef83614fc"
     }
   ];
 
@@ -47,7 +57,7 @@ export const Publications = () => {
           {publications.map((pub, index) => (
             <Card 
               key={index} 
-              className="p-6 hover-lift shadow-elegant transition-smooth group"
+              className="p-6 hover-lift shadow-elegant transition-smooth group flex flex-col justify-between"
             >
               <div className="space-y-4">
                 {/* Header */}
@@ -99,14 +109,16 @@ export const Publications = () => {
                   </div>
 
                   {/* Action */}
-                  <div className="pt-2">
-                    <Button variant="ghost" size="sm" className="group/btn p-0 h-auto">
-                    <a href={pub.url}>
-                      <ExternalLink className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
-                      Read Publication
-                      </a>
-                    </Button>
-                  </div>
+                  {pub.url && (
+                    <div className="pt-2">
+                      <Button variant="ghost" size="sm" asChild className="group/btn p-0 h-auto">
+                        <a href={pub.url} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                          <ExternalLink className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                          Read Publication
+                        </a>
+                      </Button>
+                    </div>
+                  )}
                 </div>
               </div>
             </Card>
@@ -116,12 +128,12 @@ export const Publications = () => {
         {/* Statistics */}
         <div className="grid md:grid-cols-3 gap-6 animate-slide-up">
           <Card className="p-6 text-center hover-lift">
-            <div className="text-3xl font-bold text-accent mb-2">2+</div>
-            <div className="text-muted-foreground">Publications</div>
+            <div className="text-3xl font-bold text-accent mb-2">3</div>
+            <div className="text-muted-foreground">Writings & Publications</div>
           </Card>
           
           <Card className="p-6 text-center hover-lift">
-            <div className="text-3xl font-bold text-accent mb-2">1</div>
+            <div className="text-3xl font-bold text-accent mb-2">2</div>
             <div className="text-muted-foreground">Research Papers</div>
           </Card>
           

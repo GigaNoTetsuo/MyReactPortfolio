@@ -88,38 +88,38 @@ All colors MUST be HSL for consistency and theming.
   }
 
   .dark {
-    /* Dark Mode - Professional Navy Theme */
+    /* Dark Mode - High Contrast Professional Theme */
     --background: 215 85% 6%;
-    --foreground: 0 0% 95%;
+    --foreground: 0 0% 98%;
 
     --card: 215 70% 8%;
-    --card-foreground: 0 0% 95%;
+    --card-foreground: 0 0% 98%;
     --card-hover: 215 60% 12%;
 
     --popover: 215 70% 8%;
-    --popover-foreground: 0 0% 95%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 215 85% 12%;
-    --primary-hover: 0 0% 90%;
+    --primary: 189 94% 50%;
+    --primary-foreground: 215 95% 6%;
+    --primary-hover: 189 94% 45%;
 
     --accent: 189 94% 50%;
-    --accent-foreground: 215 85% 12%;
+    --accent-foreground: 215 95% 6%;
     --accent-hover: 189 94% 45%;
-    --accent-light: 189 94% 15%;
+    --accent-light: 189 94% 18%;
 
-    --secondary: 215 40% 15%;
-    --secondary-foreground: 0 0% 90%;
-    --secondary-hover: 215 40% 20%;
+    --secondary: 215 40% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-hover: 215 40% 22%;
 
-    --muted: 215 40% 15%;
-    --muted-foreground: 215 15% 65%;
+    --muted: 215 40% 16%;
+    --muted-foreground: 215 20% 80%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 215 40% 18%;
-    --input: 215 40% 15%;
+    --border: 215 35% 22%;
+    --input: 215 35% 18%;
     --ring: 189 94% 50%;
 
     /* Dark Mode Gradients */
@@ -229,4 +229,24 @@ All colors MUST be HSL for consistency and theming.
   .container-padding {
     @apply px-4 md:px-6 lg:px-8;
   }
+}
+
+/* Infinite Marquee Animation for Certifications */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }

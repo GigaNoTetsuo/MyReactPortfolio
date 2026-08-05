@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import brainLogo from "@/assets/digital-brain-logo.png";
 import { cn } from "@/lib/utils";
 
 export const Header = () => {
@@ -9,6 +10,7 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    document.documentElement.classList.add("dark");
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -17,17 +19,12 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle("dark");
-  };
-
   const navItems = [
     { name: "Home", href: "#hero" },
+    { name: "Solutions", href: "#services" },
+    { name: "Case Studies", href: "#projects" },
+    { name: "Skills & Tech", href: "#skills" },
     { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -48,40 +45,38 @@ export const Header = () => {
     >
       <div className="container mx-auto container-padding">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-              <span className="text-accent-foreground font-bold text-lg">O</span>
+          {/* Digital Brain Logo */}
+          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => scrollToSection("#hero")}>
+            <div className="w-10 h-10 rounded-xl overflow-hidden shadow-[0_0_15px_hsl(var(--accent)/0.4)] border border-accent/40 flex items-center justify-center bg-card">
+              <img src={brainLogo} alt="Obaid Sajjad AI" className="w-full h-full object-cover" />
             </div>
-            <span className="text-xl font-bold text-foreground">Obaid Sajjad</span>
+            <div className="flex flex-col">
+              <span className="text-lg font-bold text-foreground leading-none">Obaid Sajjad</span>
+              <span className="text-[10px] text-muted-foreground font-medium">AI & Digital Solutions</span>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-7">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-accent transition-colors duration-300 font-medium"
+                className="text-muted-foreground hover:text-accent transition-colors duration-300 font-medium text-sm"
               >
                 {item.name}
               </button>
             ))}
           </nav>
 
-          {/* Theme Toggle & Mobile Menu */}
-          <div className="flex items-center space-x-2">
+          {/* Book Consultation CTA */}
+          <div className="flex items-center space-x-3">
             <Button
-              variant="ghost"
               size="sm"
-              onClick={toggleTheme}
-              className="w-9 h-9 p-0"
+              className="hidden sm:inline-flex bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm text-xs font-semibold"
+              onClick={() => scrollToSection("#contact")}
             >
-              {isDark ? (
-                <Sun className="w-4 h-4" />
-              ) : (
-                <Moon className="w-4 h-4" />
-              )}
+              Book Consultation
             </Button>
 
             {/* Mobile Menu Button */}
